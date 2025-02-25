@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=https://www.schulebaunach.de/">
     <title>Schule Baunach</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        #countdown {
+            font-size: 3em;
+            font-weight: bold;
+            color: #d9534f;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #5cb85c;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <script>
+        let countdown = 3;
+        function updateCountdown() {
+            document.getElementById('countdown').textContent = countdown;
+            countdown--;
+            if (countdown < 0) {
+                window.location.href = "https://www.schulebaunach.de/";
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        window.onload = updateCountdown;
+    </script>
 </head>
 <body>
     <h1>Die Schultimer Website wurde stillgelegt!</h1>
-    <p>Wenn die Weiterleitung nicht automatisch erfolgt, <a href="https://www.schulebaunach.de/">klicke hier</a>.</p>
+    <p>Du wirst in <span id="countdown">3</span> Sekunden weitergeleitet...</p>
+    <p>Falls die Weiterleitung nicht automatisch erfolgt, <a class="button" href="https://www.schulebaunach.de/">Klicke hier</a>.</p>
 </body>
 </html>
